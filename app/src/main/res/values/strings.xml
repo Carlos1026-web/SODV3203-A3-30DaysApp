@@ -1,3 +1,37 @@
 <resources>
     <string name="app_name">SODV3203-A3-30DaysApp</string>
+
+    <string name="day_1_excercise">Forward Fold with Clasped Hands</string>
+    <string name="day_2_excercise">Pyramid Pose</string>
+    <string name="day_3_excercise">Half Splits</string>
+    <string name="day_4_excercise">Low Lunge</string>
+    <string name="day_5_excercise">Supine Hamstring and Hip Stretch with strap (bring the leg out to the side)</string>
+    <string name="day_6_excercise">Supported Splits</string>
+    <string name="day_7_excercise">Deep Squat with Reach</string>
+    <string name="day_8_excercise">Seated Hamstring Stretch with Side Body Reach</string>
+    <string name="day_9_excercise">Deep Squat</string>
+    <string name="day_10_excercise">Supine Hamstring Stretch (keep leg centered)</string>
+
+    <string name="day_11_excercise">Seated Hamstring Stretch with Forward Fold</string>
+    <string name="day_12_excercise">Side Lying Hip Opener</string>
+    <string name="day_13_excercise">Seated Forward Fold/Pike</string>
+    <string name="day_14_excercise">Supine Straddle (you can do this with a wall)</string>
+    <string name="day_15_excercise">Pigeon Pose</string>
+    <string name="day_16_excercise">Triangle Pose</string>
+    <string name="day_17_excercise">Revolved Triangle Pose</string>
+    <string name="day_18_excercise">3-Legged Dog</string>
+    <string name="day_19_excercise">Straddle with Reach</string>
+    <string name="day_20_excercise">Runner’s Lunge</string>
+
+    <string name="day_21_excercise">Reclined Single-Leg Hero Pose</string>
+    <string name="day_22_excercise">Supine Hamstring and Hip Stretch</string>
+    <string name="day_23_excercise">Double Pigeon with a Forward Fold</string>
+    <string name="day_24_excercise">Low Lunge Quad Stretch</string>
+    <string name="day_25_excercise">Quad Stretch</string>
+    <string name="day_26_excercise">Plié Squat</string>
+    <string name="day_27_excercise">Middle Splits</string>
+    <string name="day_28_excercise">Splits (make sure to do both legs!)</string>
+    <string name="day_29_excercise">Dancer’s Pose</string>
+    <string name="day_30_excercise">Straight Leg Scale</string>
+
 </resources>
