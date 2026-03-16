@@ -10,13 +10,17 @@ import androidx.compose.animation.animateColorAsState
 import androidx.compose.animation.animateContentSize
 import androidx.compose.animation.core.Spring
 import androidx.compose.animation.core.spring
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.horizontalScroll
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material.icons.Icons
@@ -37,7 +41,10 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
+import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.layout.ModifierLocalBeyondBoundsLayout
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -117,11 +124,14 @@ fun StretchItem (
                 .background(color = color)
         ) {
             Row(
-                modifier = Modifier.fillMaxWidth()
+                modifier = Modifier.fillMaxWidth(),
+                horizontalArrangement = Arrangement.Center,
+                verticalAlignment = Alignment.CenterVertically
             ) {
+//                StretchImage(stretch)
                 StretchInformation(stretch.day)
 
-                Spacer(modifier= Modifier.weight(1f))
+//                Spacer(modifier= Modifier.weight(1f))
                 StretchItemButton(
                     expanded = expanded,
                     onClick = {expanded=!expanded}
@@ -129,7 +139,15 @@ fun StretchItem (
             }
 
             if(expanded) {
-                StretchDescription(stretch.description)
+//                StretchDescription(stretch.description)
+                Column(
+                    horizontalAlignment = Alignment.CenterHorizontally,
+                    verticalArrangement = Arrangement.Center,
+
+                ) {
+                    StretchDescription(stretch.description)
+                    StretchImage(stretch)
+                }
             }
         }
     }
@@ -140,6 +158,8 @@ fun StretchInformation(
     stretchDay: String
 ) {
     Column(
+        horizontalAlignment = Alignment.CenterHorizontally,
+        verticalArrangement = Arrangement.Center
     ) {
         Text(
             text = stretchDay,
@@ -152,7 +172,10 @@ fun StretchInformation(
 fun StretchDescription(
     stretchDescription: Int
 ) {
-    Column() {
+    Column(
+        horizontalAlignment = Alignment.CenterHorizontally,
+        verticalArrangement = Arrangement.Center
+    ) {
         Text(
             text = stringResource(stretchDescription),
             style = MaterialTheme.typography.bodyLarge
@@ -175,6 +198,20 @@ fun StretchItemButton(
             tint = MaterialTheme.colorScheme.error
         )
     }
+}
+
+@Composable
+fun StretchImage(
+    stretch: Stretch
+) {
+    Image(
+        painter = painterResource(stretch.imageResourceId),
+        contentDescription = null,
+        modifier = Modifier.size(200.dp)
+            .padding(8.dp)
+            .clip(MaterialTheme.shapes.small),
+        contentScale = ContentScale.Crop
+    )
 }
 
 @Preview(showBackground = true)
